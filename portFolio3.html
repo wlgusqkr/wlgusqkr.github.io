@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpwdort" content="width=device-width, initial-scale=1.0">
+    <title>portfolio3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="portFolio3.css" rel="stylesheet">
+</head>
+<body style="margin: 0; 
+background-color: #eee;">
+<div class="d-flex main-Wrapper">
+    <div id="sidebar">
+      <div id="icon-box">
+        <ul>
+          <li><i class="fa-solid fa-house "></i></li>
+          <li><i class="fa-solid fa-headphones "></i></li>
+          <li><i class="fa-solid fa-flag"></i></li>
+          <li><i class="fa-solid fa-chart-pie"></i></li>
+        </ul>
+      </div>
+      <div id="letter-box">
+        <ul>
+          <li>Home</li>
+          <li>Services</li>
+          <li>Alerts</li>
+          <li>Stats</li>
+        </ul>
+      </div>
+    </div>
+    <div id="main-page">
+        <div id="topbar" class=" ptb-05">
+          <div class="row">
+          <div class="col-6 mb-3 ">
+            <div id="button-ani"class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+              <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+            </div>
+          </div>
+
+          <div class="col-6 " >
+            <ul class="button-ul">
+              <li><i class="fa-solid fa-bell "></i></li>
+              <li><i class="fa-solid fa-envelope "></i></li>
+              <li><span>Jihyeon Park</span></li>
+            </ul>
+          </div>
+        </div>
+        </div>
+        <div id="main-content" style>
+            <div class="mt-3" id="dashboard">
+                <h4 style="padding-bottom: 12px;"><strong>Dashboard</strong></h4>
+                <div class="row">
+                    <div class="col-3">
+                      <div class="card rounded-6">
+                        <div class="card-body pd-30">
+                          <div class="row">
+                            <div class="col-9">
+                              <h6 class="card-subtitle mb-3 text-muted ">Earnings (Annual)</h6>
+                              <h5 class="card-title">$800,000</h5>
+                            </div>
+                            <div class="col-3">
+                              <i class="fa-solid fa-calendar dashboard-icon"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="card rounded-6">
+                        <div class="card-body pd-30">
+                            <div class="row">
+                              <div class="col-9">
+                                <h6 class="card-subtitle mb-3 text-muted ">Earnings (Annual)</h6>
+                                <h5 class="card-title">$800,000</h5>
+                              </div>
+                              <div class="col-3">
+                                <i class="fa-solid fa-dollar-sign dashboard-icon"></i>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="card rounded-6">
+                        <div class="card-body pd-30">
+                          <div class="row">
+                            <div class="col-8">
+                              <h6 class="card-subtitle mb-3 text-muted ">Task</h6>
+                              <h5 class="card-title">14</h5>
+                            </div>
+                            <div class="col-4">
+                              <i class="fa-solid fa-list-check dashboard-icon"></i>
+                            </div>
+                          </div>
+                      </div>
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="card rounded-6">
+                        <div class="card-body pd-30">
+                          <div class="row">
+                            <div class="col-8">
+                              <h6 class="card-subtitle mb-3 text-muted ">Requests</h6>
+                              <h5 class="card-title">26</h5>
+                            </div>
+                            <div class="col-4">
+                              <i class="fa-solid fa-message dashboard-icon"></i>
+                            </div>
+                          </div>
+                      </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div id="Task-graph-box" class="mt-3 row">
+              <div class="col-9">
+                <ul class="list-group ">
+                  <li class="list-group-item bg-light text-pd ">Earnings Overview</li>
+                  <li class="list-group-item text-pd "><canvas id="myChart"></canvas></li>
+                </ul>
+              </div>
+              <div class="col-3">
+                <ul class="list-group">
+                  <li class="list-group-item bg-light text-pd "><strong>Task</strong></li>
+                  <li class="list-group-item text-pd d-flex justify-content-between align-items-center">
+                    A list item
+                    <span class="badge bg-primary rounded-pill">14</span>
+                  </li>
+                  <li class="list-group-item d-flex text-pd justify-content-between align-items-center">
+                    A second list item
+                    <span class="badge bg-primary rounded-pill">2</span>
+                  </li>
+                  <li class="list-group-item d-flex text-pd justify-content-between align-items-center">
+                    A third list item
+                    <span class="badge bg-primary rounded-pill">1</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+          datasets: [{
+              label: '# of Votes',
+              data: [12, 19, 3, 5, 2, 3],
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              y: {
+                  beginAtZero: true
+              }
+          }
+      }
+  });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
